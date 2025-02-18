@@ -9,6 +9,14 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Mobile First Styles */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
@@ -56,6 +64,13 @@ header h1 {
     text-shadow: 0 0 10px rgba(254, 254, 254, 0.8);
 }
 
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -92,6 +107,21 @@ nav a {
     animation: linkGlow 3s infinite alternate;
 }
 
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin: 5px 0;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
 @keyframes linkGlow {
     0% { box-shadow: 0 0 5px rgba(254, 254, 254, 0.3); }
     100% { box-shadow: 0 0 15px rgba(254, 254, 254, 0.8); }
@@ -115,6 +145,13 @@ section {
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    section {
+        padding: 30px 10px;
+    }
+}
+
+
 .project {
     margin: 20px;
     padding: 20px;
@@ -124,8 +161,71 @@ section {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
-    animation: cardPulse 4s infinite;
+    animation: cardPulse 4s infinite, glowBorder 2s infinite alternate;
+    box-shadow: 0 0 10px rgba(2, 169, 92, 0.3);
 }
+
+@keyframes glowBorder {
+    0% {
+        border-color: #02a95c;
+        box-shadow: 0 0 10px rgba(2, 169, 92, 0.3);
+    }
+    100% {
+        border-color: #608a89;
+        box-shadow: 0 0 20px rgba(96, 138, 137, 0.6);
+    }
+}
+
+.project::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%);
+    animation: shimmer 3s infinite;
+    transform: rotate(45deg);
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+
+@media (max-width: 600px) {
+    .project {
+        margin: 10px 0;
+        padding: 15px;
+        animation: cardPulse 4s infinite, glowBorderMobile 2s infinite alternate;
+    }
+
+    @keyframes glowBorderMobile {
+        0% {
+            border-color: #02a95c;
+            box-shadow: 0 0 5px rgba(2, 169, 92, 0.2);
+        }
+        100% {
+            border-color: #608a89;
+            box-shadow: 0 0 10px rgba(96, 138, 137, 0.4);
+        }
+    }
+
+    .project::after {
+        animation: shimmerMobile 4s infinite;
+    }
+
+    @keyframes shimmerMobile {
+        0% { transform: translateX(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) rotate(45deg); }
+    }
+}
+
+
 
 @keyframes cardPulse {
     0%, 100% { transform: scale(1); }
