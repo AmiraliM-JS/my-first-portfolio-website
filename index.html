@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Website</title>
     <link rel="stylesheet" href="styles/index.css">
-
+    <script src="scripts/main.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Welcome to My Website</h1>
         <p>Showcasing my creativity and skills</p>
+
         <nav>
+
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
@@ -25,20 +28,35 @@
 
     <section id="projects">
         <h2>My Projects</h2>
-        <div class="project">
+        <div class="project" data-project="1">
             <h3>Project1</h3>
+            <div class="project-details" style="display: none;">
+                <p>Details about Project 1</p>
+                <button class="close-btn">Close</button>
+            </div>
         </div>
-        <div class="project">
+        <div class="project" data-project="2">
             <h3>Project2</h3>
+            <div class="project-details" style="display: none;">
+                <p>Details about Project 2</p>
+                <button class="close-btn">Close</button>
+            </div>
         </div>
-        <div class="project">
+        <div class="project" data-project="3">
             <h3>Project3</h3>
+            <div class="project-details" style="display: none;">
+                <p>Details about Project 3</p>
+                <button class="close-btn">Close</button>
+            </div>
         </div>
+
     </section>
 
 
     <footer>
         <p>&copy; 2025 My First Portfolio Website</p>
+        <button id="backToTop" class="hidden">↑ Back to Top</button>
     </footer>
+
 </body>
 </html>
