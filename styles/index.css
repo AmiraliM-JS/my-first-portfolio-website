@@ -9,6 +9,17 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Vibrant Theme Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #02a95c, #608a89);
+    color: #444444;
+    overflow-x: hidden;
+    animation: backgroundShift 10s infinite alternate;
+    scroll-behavior: smooth;
+}
+
 /* Mobile First Styles */
 @media (max-width: 600px) {
     body {
@@ -36,6 +47,7 @@ body {
     width: 12px;
 }
 
+
 ::-webkit-scrollbar-track {
     background: #e8f2f4;
     border-radius: 10px;
@@ -44,13 +56,26 @@ body {
 ::-webkit-scrollbar-thumb {
     background: #608a89;
     border-radius: 10px;
-    border: 3px solid #e8f2f4;
+    border: 2px solid #e8f2f4;
     transition: background 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #898f93;
 }
+
+/* Mobile-friendly scrollbar */
+@media (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-width: 2px;
+    }
+}
+
+
 
 
 
@@ -158,6 +183,22 @@ section {
     padding: 50px 20px;
     text-align: center;
 }
+
+#about p {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#about p::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+    float: left;
+    line-height: 0.8;
+    margin-right: 5px;
+    color: #444444;
+}
+
+
 
 @media (max-width: 600px) {
     section {
