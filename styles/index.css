@@ -9,17 +9,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Vibrant Theme Styles */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #02a95c, #608a89);
-    color: #444444;
-    overflow-x: hidden;
-    animation: backgroundShift 10s infinite alternate;
-    scroll-behavior: smooth;
-}
-
 /* Mobile First Styles */
 @media (max-width: 600px) {
     body {
@@ -39,14 +28,10 @@ body {
     }
 }
 
-
-
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
-
 
 ::-webkit-scrollbar-track {
     background: #e8f2f4;
@@ -74,10 +59,6 @@ body {
         border-width: 2px;
     }
 }
-
-
-
-
 
 @keyframes backgroundShift {
     0% { background-position: 0% 50%; }
@@ -109,7 +90,6 @@ header h1 {
     }
 }
 
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -128,6 +108,35 @@ header p {
 @keyframes slideIn {
     0% { transform: translateX(-100%); opacity: 0; }
     100% { transform: translateX(0); opacity: 1; }
+}
+
+.create-account-btn {
+    background: linear-gradient(135deg, #608a89, #02a95c);
+    color: #fefefe;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1.3em;
+    animation: linkGlow 3s infinite alternate;
+}
+
+.create-account-btn:hover {
+    background: linear-gradient(135deg, #02a95c, #608a89);
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(96, 138, 137, 0.9);
+    animation: buttonBounce 0.5s;
+}
+
+
+@media (max-width: 600px) {
+    .create-account-btn {
+        width: 80%;
+        margin: 5px 0;
+    }
 }
 
 nav {
@@ -159,7 +168,6 @@ nav a {
         text-align: center;
     }
 }
-
 
 @keyframes linkGlow {
     0% { box-shadow: 0 0 5px rgba(254, 254, 254, 0.3); }
@@ -198,14 +206,11 @@ section {
     color: #444444;
 }
 
-
-
 @media (max-width: 600px) {
     section {
         padding: 30px 10px;
     }
 }
-
 
 .project {
     margin: 20px;
@@ -221,14 +226,8 @@ section {
 }
 
 @keyframes glowBorder {
-    0% {
-        border-color: #02a95c;
-        box-shadow: 0 0 10px rgba(2, 169, 92, 0.3);
-    }
-    100% {
-        border-color: #608a89;
-        box-shadow: 0 0 20px rgba(96, 138, 137, 0.6);
-    }
+    0% { border-color: #02a95c; box-shadow: 0 0 10px rgba(2, 169, 92, 0.3); }
+    100% { border-color: #608a89; box-shadow: 0 0 20px rgba(96, 138, 137, 0.6); }
 }
 
 .project::after {
@@ -251,7 +250,6 @@ section {
     100% { transform: translateX(100%) rotate(45deg); }
 }
 
-
 @media (max-width: 600px) {
     .project {
         margin: 10px 0;
@@ -260,14 +258,8 @@ section {
     }
 
     @keyframes glowBorderMobile {
-        0% {
-            border-color: #02a95c;
-            box-shadow: 0 0 5px rgba(2, 169, 92, 0.2);
-        }
-        100% {
-            border-color: #608a89;
-            box-shadow: 0 0 10px rgba(96, 138, 137, 0.4);
-        }
+        0% { border-color: #02a95c; box-shadow: 0 0 5px rgba(2, 169, 92, 0.2); }
+        100% { border-color: #608a89; box-shadow: 0 0 10px rgba(96, 138, 137, 0.4); }
     }
 
     .project::after {
@@ -279,8 +271,6 @@ section {
         100% { transform: translateX(100%) rotate(45deg); }
     }
 }
-
-
 
 @keyframes cardPulse {
     0%, 100% { transform: scale(1); }
@@ -320,7 +310,6 @@ section {
 .close-btn:hover {
     background: #02a95c;
 }
-
 
 .project::before {
     content: '';
@@ -376,7 +365,6 @@ footer {
 .hidden {
     display: none;
 }
-
 
 @keyframes footerPulse {
     0%, 100% { transform: scale(1); }

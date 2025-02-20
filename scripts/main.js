@@ -1,6 +1,31 @@
+// Check for logged in user and update button text
+document.addEventListener('DOMContentLoaded', function() {
+    const createAccountBtn = document.querySelector('.create-account-btn');
+    const userData = JSON.parse(localStorage.getItem('currentUser'));
+    
+    if (userData && userData.username) {
+        createAccountBtn.textContent = userData.username;
+    } else {
+        createAccountBtn.textContent = 'Create Account';
+    }
+
+    // Handle button click
+    createAccountBtn.addEventListener('click', function() {
+        if (userData && userData.username) {
+            // If logged in, redirect to profile page or stay on index
+            window.location.href = 'index.html';
+        } else {
+            // If not logged in, go to login page
+            window.location.href = 'login_page.html';
+        }
+    });
+});
+
+
 // Smooth scrolling for navigation links
 // Enhanced smooth scrolling for all devices
 document.querySelectorAll('nav a').forEach(anchor => {
+
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
